@@ -1,16 +1,26 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-timer_ = 30;
-cTime_ = 3;
-image_speed = 0;
+//walking variables
 walk_speed_ = 7.5;
-global.gravity_ = 0.35;
 y_momentum_ = 0;
 x_momentum_ = 0;
 direction_facing_ = dir_player.right;
-state_ = 0;
+
+//jumping variables
+cTime_ = 3;
+
+//Other important stuff
+timer_ = 30;
+image_speed = 0;
 original_x_momentum_ = 0;
+
+//Slignshot variables
+state_ = 0;
+global.gravity_ = 0.35;
+
+
+
 
 global.player_health = 4;
 
