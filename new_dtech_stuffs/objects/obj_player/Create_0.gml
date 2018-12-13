@@ -7,8 +7,10 @@ y_momentum_ = 0;
 x_momentum_ = 0;
 direction_facing_ = dir_player.right;
 
+
 //jumping variables
 cTime_ = 3;
+maxSpeed_ = 15;
 
 //Other important stuff
 timer_ = 30;

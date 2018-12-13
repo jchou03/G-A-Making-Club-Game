@@ -24,8 +24,19 @@ global.player_input_direction = point_direction(0,0,_x_input,_y_input);
 //Set up the direction we are facing
 direction_facing_ = round(global.player_input_direction/45);
 
-x_momentum_ = _x_input * walk_speed_;
+//Set movement stuff
 y_momentum_ += global.gravity_;
+if(place_meeting(x,y+1,obj_wall)){
+	x_momentum_ = _x_input * walk_speed_;
+}
+//in air movement
+else if(!place_meeting(x,y+1,obj_wall) && abs(x_momentum_) < maxSpeed_){
+	x_momentum_ += _x_input* walk_speed_/4;
+	if((x_momentum_ > 0 && original_x_momentum_ < 0) || (x_momentum_ < 0 && original_x_momentum_ > 0)){
+		state_ = player.move;
+	}
+}
+
 
 
 //Jump
@@ -35,6 +46,8 @@ if(/*place_meeting(x+sign(x_momentum_)*1,y+2*global.gravity_,obj_wall))&&*/(_jum
 	y_momentum_ = -10;
 	//state_ = player.fly;
 }
+
+
 
 //transition into grapple or whatever happens
 if(_move && distance_to_object(obj_hookPoint) < 500){
