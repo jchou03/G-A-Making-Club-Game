@@ -14,6 +14,9 @@ if(provoked_ == 0){
 	}
 	
 }
+if(health_ <= 0){
+	instance_destroy();
+}
 
 //Collisions
 x_collision(x_momentum_);

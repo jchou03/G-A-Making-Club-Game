@@ -6,6 +6,7 @@ y_momentum_ = 0;
 x_momentum_ = 0;
 direction_facing_ = dir_enemy.right;
 provoked_ = 0;
+health_ = 1;
 
 global.player_health = 4;
 

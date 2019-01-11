@@ -1,4 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-lifespan_ = 5;
+with(other){
+	health_ -=1;
+}

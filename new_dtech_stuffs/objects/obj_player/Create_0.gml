@@ -1,30 +1,30 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+//Allow others to access instance variables
+global.playerID = id;
+
 //walking variables
 walk_speed_ = 7.5;
 y_momentum_ = 0;
 x_momentum_ = 0;
 direction_facing_ = dir_player.right;
-
+direction_moving_ = 0;
 
 //jumping variables
 cTime_ = 3;
-maxSpeed_ = 15;
+maxSpeed_ = 11;
 
 //Other important stuff
 timer_ = 30;
-image_speed = 0;
 original_x_momentum_ = 0;
 
 //Slignshot variables
 state_ = 0;
 global.gravity_ = 0.35;
 
-
-
-
-global.player_health = 4;
+//Attacking variables
+attack_cooldown_ = 0;
 
 enum player{
 	move,

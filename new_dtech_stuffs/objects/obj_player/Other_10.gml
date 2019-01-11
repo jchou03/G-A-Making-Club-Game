@@ -16,37 +16,59 @@ var _dash = gamepad_button_check_pressed(0,gp_shoulderrb);
 var _x_input = (keyboard_check(vk_right)||keyboard_check(ord("D"))) - (keyboard_check(vk_left)||keyboard_check(ord("A")));
 var _y_input = (keyboard_check(vk_down)||keyboard_check(ord("S"))) - (keyboard_check(vk_up)||keyboard_check(ord("W")));
 var _jump = keyboard_check_pressed(vk_space);
-var _dash = keyboard_check_pressed(vk_lshift);
+var _attack = keyboard_check_pressed(ord("J"));
 var _move = keyboard_check_pressed(ord("K"));
 
 global.player_input_direction = point_direction(0,0,_x_input,_y_input);
 
 //Set up the direction we are facing
-direction_facing_ = round(global.player_input_direction/45);
+direction_facing_ = round(global.player_input_direction/90);
+
+if(_x_input != 0){
+	image_xscale = _x_input;
+}
+
+//Set up direction moving
+direction_moving_ = sign(x_momentum_);
 
 //Set movement stuff
 y_momentum_ += global.gravity_;
-if(place_meeting(x,y+1,obj_wall)){
-	x_momentum_ = _x_input * walk_speed_;
-}
+x_momentum_ = _x_input * walk_speed_;
 //in air movement
-else if(!place_meeting(x,y+1,obj_wall) && abs(x_momentum_) < maxSpeed_){
-	x_momentum_ += _x_input* walk_speed_/4;
+/*
+else if(!place_meeting(x,y+1,obj_wall)){
+	//Allow exeleration up until hits maxspeed
+	if(abs(x_momentum_) < maxSpeed_){
+		x_momentum_ += _x_input * walk_speed_/20;
+	}
+	//Allow exceleration in the opposite direction
+	else if(_x_input != direction_moving_){
+		x_momentum_ += _x_input * walk_speed_/20;
+	}
+	instance_create_layer(x,y,"Instances",obj_paint);
+	/*
 	if((x_momentum_ > 0 && original_x_momentum_ < 0) || (x_momentum_ < 0 && original_x_momentum_ > 0)){
 		state_ = player.move;
 	}
 }
+*/
 
 
 
 //Jump
 if(place_meeting(x,y+2*global.gravity_,obj_wall)) cTime_ = 6;
 if(!place_meeting(x,y+2*global.gravity_,obj_wall)) cTime_ = cTime_- 1;
-if(/*place_meeting(x+sign(x_momentum_)*1,y+2*global.gravity_,obj_wall))&&*/(_jump)&&(cTime_ >= 0)){
+if(place_meeting(x+sign(x_momentum_)*1,y+2*global.gravity_,obj_wall)&&(_jump)&&(cTime_ >= 0)){
 	y_momentum_ = -10;
 	//state_ = player.fly;
 }
 
+//Attack
+if(_attack && attack_cooldown_ <=0){
+	global.spearID.state_ = 1;
+	attack_cooldown_ = 2;
+}
+attack_cooldown_ -= 1;
 
 
 //transition into grapple or whatever happens
