@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description 
 
 //Allow others to access instance variables
 global.playerID = id;
@@ -14,6 +13,7 @@ direction_moving_ = 0;
 //jumping variables
 cTime_ = 3;
 maxSpeed_ = 11;
+jump_acceleration_ = 0;
 
 //Other important stuff
 timer_ = 30;
@@ -29,7 +29,8 @@ attack_cooldown_ = 0;
 enum player{
 	move,
 	slingshot,
-	fly
+	fly,
+	hit
 }
 
 enum dir_player{

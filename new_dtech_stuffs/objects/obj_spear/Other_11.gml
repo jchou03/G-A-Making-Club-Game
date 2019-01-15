@@ -1,13 +1,15 @@
-/// @description Attack
+/// @description Attack State
 // You can write your code in this editor
 
-if(attack_cycle_ <= 0){
-	attack_cycle_ = 30;
-	state_ = 0;
-}else if(attack_cycle_ > 15){
-	x = obj_player.x + 3*global.playerID.direction_facing_;
-}else{
-	x -= obj_player.x - 3 * global.playerID.direction_facing_;
-}
+
+attack_directions = inst_player.direction_facing_;
+
+x = inst_player.x + 10;
+y = inst_player.y + 10;
+
+
 
 attack_cycle_ -= 1;
+if(attack_cycle_ <=0){
+	state_ = spear.idle;
+}

@@ -138,7 +138,7 @@
             "Key": "799c47f7-b60e-4b8f-9f25-ef4a0715cda3",
             "Value": {
                 "id": "a9b5678a-af17-4fe1-be45-bf078511f6b2",
-                "resourcePath": "sprites\\sprite4\\sprite4.yy",
+                "resourcePath": "sprites\\spr_villager\\spr_villager.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -252,6 +252,14 @@
                 "id": "3749008b-5c91-4e6b-8704-4a93bea561ad",
                 "resourcePath": "objects\\obj_hookPoint\\obj_hookPoint.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "c5392b36-ef89-41c8-9a1b-4ac0665186e8",
+            "Value": {
+                "id": "44885709-8283-47ef-bcf9-cc07d600fd08",
+                "resourcePath": "rooms\\room1\\room1.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
