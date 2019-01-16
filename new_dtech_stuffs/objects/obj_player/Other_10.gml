@@ -58,7 +58,7 @@ else if(!place_meeting(x,y+1,obj_wall)){
 //Jump
 //If touching the ground then give cTime and reset the jump acceleration
 if(place_meeting(x,y+2*global.gravity_,obj_wall)) {
-	cTime_ = 6;
+	cTime_ = 8;
 	jump_acceleration_ = 0;
 	air_time_ = 0;
 }

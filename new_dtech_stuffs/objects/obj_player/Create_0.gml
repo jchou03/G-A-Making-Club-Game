@@ -11,7 +11,7 @@ direction_facing_ = dir_player.right;
 direction_moving_ = 0;
 
 //jumping variables
-cTime_ = 3;
+cTime_ = 8;
 maxSpeed_ = 11;
 jump_acceleration_ = 15;
 

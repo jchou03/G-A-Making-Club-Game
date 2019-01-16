@@ -3,8 +3,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (instance_exists(follow))
-{
+if (instance_exists(follow)){
 	xTo = follow.x;
 	yTo = follow.y;
 }

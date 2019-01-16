@@ -2,10 +2,10 @@
 // You can write your code in this editor
 
 
-attack_directions = inst_player.direction_facing_;
+attack_directions = global.playerID.direction_facing_;
 
-x = inst_player.x + 10;
-y = inst_player.y + 10;
+x = global.playerID.x + 10;
+y = global.playerID.y + 10;
 
 
 
