@@ -13,8 +13,7 @@ direction_moving_ = 0;
 //jumping variables
 cTime_ = 3;
 maxSpeed_ = 11;
-jump_acceleration_ = 0;
-air_time_ = 0;
+jump_acceleration_ = 15;
 
 //Other important stuff
 timer_ = 30;
