@@ -60,16 +60,25 @@ else if(!place_meeting(x,y+1,obj_wall)){
 if(place_meeting(x,y+2*global.gravity_,obj_wall)) {
 	cTime_ = 6;
 	jump_acceleration_ = 0;
+	air_time_ = 0;
 }
 
 //Reduce the ctime timers when in the air after not touching the ground
-if(!place_meeting(x,y+2*global.gravity_,obj_wall)) cTime_ = cTime_- 1;
+if(!place_meeting(x,y+2*global.gravity_,obj_wall)) {
+	cTime_ = cTime_- 1;
+	air_time_++;
+}
 if(_jump){
 	jump_acceleration_+= 15;
 }
 if(place_meeting(x+sign(x_momentum_)*1,y+2*global.gravity_,obj_wall)&&(_jump)&&(cTime_ >= 0)){
 	y_momentum_ = -jump_acceleration_;
 	//state_ = player.fly;
+}
+//Reduce the jump height if the jump button isn't held
+if(!place_meeting(x,y+2*global.gravity_,obj_wall) && !_jump && sign(y_momentum_) < 0){
+	y_momentum_ = y_momentum_/1.2;
+	instance_create_layer(x,y,"Instances",obj_hookPoint);
 }
 
 //Attack

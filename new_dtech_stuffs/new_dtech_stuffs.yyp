@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "0536aff2-4765-4eee-9fda-a7e87821abb3",
+            "Value": {
+                "id": "aae1de49-a759-4144-85e8-42609ab05da4",
+                "resourcePath": "views\\0536aff2-4765-4eee-9fda-a7e87821abb3.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "0a1b9f39-3fa1-42de-be8a-f107b27c40be",
             "Value": {
                 "id": "f2afaa25-0b96-4829-b869-8e925e9c6d1c",
@@ -58,7 +66,7 @@
             "Key": "2cde3780-0926-41e1-bb19-1d54f21e7d60",
             "Value": {
                 "id": "cb49ecb7-16e3-46ce-8448-374650608453",
-                "resourcePath": "sprites\\sprite3\\sprite3.yy",
+                "resourcePath": "sprites\\spr_mummy_walk\\spr_mummy_walk.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -162,7 +170,7 @@
             "Key": "8c66ec50-fe29-45b9-ab3b-e9e28e36a09b",
             "Value": {
                 "id": "de8aa71e-92cf-48f2-a00c-de7e29960fa4",
-                "resourcePath": "sprites\\sprite5\\sprite5.yy",
+                "resourcePath": "sprites\\spr_mummy\\spr_mummy.yy",
                 "resourceType": "GMSprite"
             }
         },
