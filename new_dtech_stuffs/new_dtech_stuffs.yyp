@@ -162,7 +162,7 @@
             "Key": "799c47f7-b60e-4b8f-9f25-ef4a0715cda3",
             "Value": {
                 "id": "a9b5678a-af17-4fe1-be45-bf078511f6b2",
-                "resourcePath": "sprites\\spr_villager\\spr_villager.yy",
+                "resourcePath": "sprites\\spr_villager_walk_side\\spr_villager_walk_side.yy",
                 "resourceType": "GMSprite"
             }
         },
