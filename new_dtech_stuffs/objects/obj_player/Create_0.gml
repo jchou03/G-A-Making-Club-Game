@@ -11,7 +11,7 @@ direction_facing_ = dir_player.right;
 direction_moving_ = 0;
 
 //jumping variables
-cTime_ = 8;
+cTime_ = 100;
 maxSpeed_ = 11;
 jump_acceleration_ = 15;
 
@@ -21,7 +21,7 @@ original_x_momentum_ = 0;
 
 //Slignshot variables
 state_ = 0;
-global.gravity_ = 0.35;
+
 
 //Attacking variables
 attack_cooldown_ = 0;

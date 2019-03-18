@@ -13,5 +13,6 @@ alarm[0] = random_range(4,10) * game_get_speed(gamespeed_fps);
 enum villager{
 	idle_front,
 	idle_side,
-	walk
+	walk,
+	talk
 }

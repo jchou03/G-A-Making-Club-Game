@@ -13,10 +13,10 @@ var _dash = gamepad_button_check_pressed(0,gp_shoulderrb);
 //keyboard input
 */
 
-var _x_input = (keyboard_check(vk_right)||keyboard_check(ord("D"))) - (keyboard_check(vk_left)||keyboard_check(ord("A")));
-var _y_input = (keyboard_check(vk_down)||keyboard_check(ord("S"))) - (keyboard_check(vk_up)||keyboard_check(ord("W")));
-var _jump = keyboard_check(vk_space);
-var _attack = keyboard_check_pressed(ord("J"));
+var _x_input = obj_input.right_ - obj_input.left_;
+var _y_input = obj_input.down_ - obj_input.up_;
+var _jump = obj_input.action_one_;
+var _attack = obj_input.action_two_pressed_;
 var _move = keyboard_check_pressed(ord("K"));
 
 global.player_input_direction = point_direction(0,0,_x_input,_y_input);
@@ -58,7 +58,7 @@ else if(!place_meeting(x,y+1,obj_wall)){
 //Jump
 //If touching the ground then give cTime and reset the jump acceleration
 if(place_meeting(x,y+2*global.gravity_,obj_wall)) {
-	cTime_ = 8;
+	cTime_ = 100;
 	jump_acceleration_ = 0;
 	air_time_ = 0;
 }
