@@ -1,5 +1,5 @@
 /// @description Walk State
-
+apply_gravity();
 image_speed = 1;
 sprite_index = spr_villager_walk_side;
 if(direction_ != 0){

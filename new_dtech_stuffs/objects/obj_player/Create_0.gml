@@ -1,7 +1,4 @@
-/// @description 
-
-//Allow others to access instance variables
-global.playerID = id;
+event_inherited();
 
 //walking variables
 walk_speed_ = 7.5;

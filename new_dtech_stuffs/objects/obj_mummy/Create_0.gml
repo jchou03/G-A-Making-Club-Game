@@ -3,7 +3,7 @@
 
 event_inherited();
 
-attack_wait_ = global.one_second * 3;
+attack_wait_ = global.one_second * random_range(2,4);
 alarm[0] = attack_wait_;
 image_xscale = -1;
 
@@ -14,7 +14,7 @@ direction_to_player_ = abs(distance_to_player_);
 
 direction_facing_ = -1;
 walk_speed_ = 2;
-state_ = mummy.walk;
+state_ = mummy.idle;
 health_ = 2;
 
 

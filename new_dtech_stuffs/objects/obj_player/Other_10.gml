@@ -1,6 +1,5 @@
 /// @description Move State
 
-
 image_speed = 0;
 //Controller input
 

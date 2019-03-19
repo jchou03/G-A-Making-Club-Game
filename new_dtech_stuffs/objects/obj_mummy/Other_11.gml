@@ -11,7 +11,6 @@ image_speed = 1;
 direction_moving_ = direction_to_player_;
 x_momentum_ = direction_to_player_ * walk_speed_;
 
-
 if(x_momentum_ != 0){
 	image_xscale = -1*sign(x_momentum_);
 }else{
