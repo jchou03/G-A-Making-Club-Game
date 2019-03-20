@@ -31,5 +31,4 @@ if(place_meeting(x,y+y_momentum_,obj_wall)){
 	state_ = player.move;
 }
 
-x += x_momentum_;
-y += y_momentum_;
+apply_momentum();

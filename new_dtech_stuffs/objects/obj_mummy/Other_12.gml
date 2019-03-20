@@ -1,5 +1,9 @@
 /// @description Attack State
 
+apply_gravity();
+
+x_momentum_ = 0;
+
 sprite_index = spr_mummy_attack;
 image_speed = 0.5;
 
@@ -11,3 +15,5 @@ if image_index == 4{
 	state_ = mummy.idle;
 	alarm[0] = attack_wait_;
 }
+
+apply_momentum();

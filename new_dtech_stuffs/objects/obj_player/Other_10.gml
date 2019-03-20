@@ -105,9 +105,4 @@ if(_move && distance_to_object(obj_hookPoint) < 500){
 	
 }
 
-//Collisions
-x_collision(x_momentum_);
-y_collision(y_momentum_);
-
-x += x_momentum_;
-y += y_momentum_;
+apply_momentum();
