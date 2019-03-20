@@ -33,51 +33,37 @@ direction_moving_ = sign(x_momentum_);
 //Set movement stuff
 y_momentum_ += global.gravity_;
 x_momentum_ = _x_input * walk_speed_;
-//in air movement
-/*
-else if(!place_meeting(x,y+1,obj_wall)){
-	//Allow exeleration up until hits maxspeed
-	if(abs(x_momentum_) < maxSpeed_){
-		x_momentum_ += _x_input * walk_speed_/20;
+
+//if you can't drowdown if you aren't on a drowdown platform
+if !(place_meeting(x,y+global.gravity_,obj_solid_platform)){
+	//Jump
+	//If touching the ground then give cTime and reset the jump acceleration
+	if(place_meeting(x,y+2*global.gravity_,obj_wall)) {
+		cTime_ = 100;
+		jump_acceleration_ = 0;
+		air_time_ = 0;
 	}
-	//Allow exceleration in the opposite direction
-	else if(_x_input != direction_moving_){
-		x_momentum_ += _x_input * walk_speed_/20;
+
+	//Reduce the ctime timers when in the air after not touching the ground
+	if(!place_meeting(x,y+2*global.gravity_,obj_wall)) {
+		cTime_ = cTime_- 1;
 	}
-	instance_create_layer(x,y,"Instances",obj_paint);
-	/*
-	if((x_momentum_ > 0 && original_x_momentum_ < 0) || (x_momentum_ < 0 && original_x_momentum_ > 0)){
-		state_ = player.move;
+	if(_jump){
+		jump_acceleration_ = 11.5;
+	}
+	if(place_meeting(x,y+2*global.gravity_,obj_wall)&&(_jump)&&(cTime_ >= 0)){
+		y_momentum_ = -jump_acceleration_;
+		//state_ = player.fly;
+	}
+	//Reduce the jump height if the jump button isn't held
+	if(!place_meeting(x,y+2*global.gravity_,obj_wall) && !_jump && sign(y_momentum_) < 0){
+		y_momentum_ = y_momentum_/1.2;
 	}
 }
-*/
-
-
-
-//Jump
-//If touching the ground then give cTime and reset the jump acceleration
-if(place_meeting(x,y+2*global.gravity_,obj_wall)) {
-	cTime_ = 100;
-	jump_acceleration_ = 0;
-	air_time_ = 0;
+//if you can make 
+else{
+	
 }
-
-//Reduce the ctime timers when in the air after not touching the ground
-if(!place_meeting(x,y+2*global.gravity_,obj_wall)) {
-	cTime_ = cTime_- 1;
-}
-if(_jump){
-	jump_acceleration_ = 11.5;
-}
-if(place_meeting(x,y+2*global.gravity_,obj_wall)&&(_jump)&&(cTime_ >= 0)){
-	y_momentum_ = -jump_acceleration_;
-	//state_ = player.fly;
-}
-//Reduce the jump height if the jump button isn't held
-if(!place_meeting(x,y+2*global.gravity_,obj_wall) && !_jump && sign(y_momentum_) < 0){
-	y_momentum_ = y_momentum_/1.2;
-}
-
 //Attack
 if(_attack && attack_cooldown_ <=0){
 	global.spearID.state_ = spear.attack;

@@ -26,8 +26,8 @@ attack_cooldown_ = 0;
 enum player{
 	move,
 	slingshot,
-	fly,
-	hit
+	drop,
+	climb
 }
 
 enum dir_player{
