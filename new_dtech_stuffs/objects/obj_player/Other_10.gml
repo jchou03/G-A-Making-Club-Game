@@ -34,11 +34,14 @@ direction_moving_ = sign(x_momentum_);
 y_momentum_ += global.gravity_;
 x_momentum_ = _x_input * walk_speed_;
 
-//if you can't drowdown if you aren't on a drowdown platform
-if !(place_meeting(x,y+global.gravity_,obj_solid_platform)){
+
+//if you can drop through a platform 
+if (_y_input == 1 && _jump){
+	state_ = player.drop;
+}else{
 	//Jump
 	//If touching the ground then give cTime and reset the jump acceleration
-	if(place_meeting(x,y+2*global.gravity_,obj_wall)) {
+	if(place_meeting(x,y+2*global.gravity_,obj_wall) && sign(y_momentum_) == 1) {
 		cTime_ = 100;
 		jump_acceleration_ = 0;
 		air_time_ = 0;
@@ -48,21 +51,22 @@ if !(place_meeting(x,y+global.gravity_,obj_solid_platform)){
 	if(!place_meeting(x,y+2*global.gravity_,obj_wall)) {
 		cTime_ = cTime_- 1;
 	}
-	if(_jump){
-		jump_acceleration_ = 11.5;
-	}
-	if(place_meeting(x,y+2*global.gravity_,obj_wall)&&(_jump)&&(cTime_ >= 0)){
-		y_momentum_ = -jump_acceleration_;
-		//state_ = player.fly;
+	
+	//Going off the ground
+	if jump_acceleration_ == 0{
+		//If pressing jump then rise up
+		
+		if(_jump){
+			jump_acceleration_ = 11.5;
+		}
+		if(place_meeting(x,y+2*global.gravity_,obj_wall)&&(_jump)&&(cTime_ >= 0)){
+			y_momentum_ = -jump_acceleration_;
+		}
 	}
 	//Reduce the jump height if the jump button isn't held
 	if(!place_meeting(x,y+2*global.gravity_,obj_wall) && !_jump && sign(y_momentum_) < 0){
 		y_momentum_ = y_momentum_/1.2;
 	}
-}
-//if you can make 
-else{
-	
 }
 //Attack
 if(_attack && attack_cooldown_ <=0){
@@ -73,7 +77,7 @@ if(_attack && attack_cooldown_ <=0){
 attack_cooldown_ -= 1;
 
 
-
+/*
 //transition into grapple or whatever happens
 if(_move && distance_to_object(obj_hookPoint) < 500){
 	timer_ = 30;
@@ -90,5 +94,5 @@ if(_move && distance_to_object(obj_hookPoint) < 500){
 	state_ = player.slingshot;
 	
 }
-
+*/
 apply_momentum();

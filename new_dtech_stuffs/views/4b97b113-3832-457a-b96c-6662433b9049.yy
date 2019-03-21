@@ -6,7 +6,9 @@
     "children": [
         "fe4aa011-1430-4d43-a7f7-81e9c8b57563",
         "9d6c44e1-31fb-4985-87e1-ca10342eb2a2",
-        "b0e689e8-1664-46e6-af97-5a2d6f26a7ae"
+        "b0e689e8-1664-46e6-af97-5a2d6f26a7ae",
+        "ce866e3d-386b-45f6-ad40-7b97209e19cd",
+        "09548860-80e9-4e9f-9110-1b0f34335ffd"
     ],
     "filterType": "GMObject",
     "folderName": "Collision Objects",
