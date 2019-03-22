@@ -19,6 +19,8 @@ original_x_momentum_ = 0;
 //Slignshot variables
 state_ = 0;
 
+//Climbing variables
+climb_speed_ = 5;
 
 //Attacking variables
 attack_cooldown_ = 0;
