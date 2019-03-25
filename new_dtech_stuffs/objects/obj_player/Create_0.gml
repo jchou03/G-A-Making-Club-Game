@@ -15,9 +15,7 @@ jump_acceleration_ = 15;
 //Other important stuff
 timer_ = 30;
 original_x_momentum_ = 0;
-
-//Slignshot variables
-state_ = 0;
+state_ = player.move;
 
 //Climbing variables
 climb_speed_ = 5;
