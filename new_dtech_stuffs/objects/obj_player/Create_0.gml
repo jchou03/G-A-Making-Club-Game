@@ -27,8 +27,7 @@ enum player{
 	move,
 	slingshot,
 	drop,
-	climb,
-	talk
+	climb
 }
 
 enum dir_player{

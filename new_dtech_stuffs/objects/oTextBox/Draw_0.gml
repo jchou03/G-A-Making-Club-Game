@@ -5,6 +5,9 @@
 draw_sprite(sTextBox,0,x,y);
 //draw text
 if(page_ >= array_length_1d(text_)){
+	if(global.signal == true){
+		game_restart();
+	}
 	instance_destroy(self);
 }else{
 	draw_text_ext(x,y,text_[page_],stringHeight_,boxWidth_);
