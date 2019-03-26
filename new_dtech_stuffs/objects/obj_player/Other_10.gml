@@ -9,14 +9,13 @@ var _x_input = (gamepad_button_check(0,gp_padr)-gamepad_button_check(0,gp_padl))
 var _y_input = (gamepad_button_check(0,gp_padd)-gamepad_button_check(0,gp_padu));
 var _jump = gamepad_button_check_pressed(0,gp_face1);
 var _dash = gamepad_button_check_pressed(0,gp_shoulderrb);
-//keyboard input
 */
 
+//keyboard input
 var _x_input = obj_input.right_ - obj_input.left_;
 var _y_input = obj_input.down_ - obj_input.up_;
 var _jump = obj_input.action_one_;
 var _attack = obj_input.action_two_pressed_;
-var _move = keyboard_check_pressed(ord("K"));
 
 global.player_input_direction = point_direction(0,0,_x_input,_y_input);
 
