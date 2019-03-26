@@ -36,7 +36,7 @@ x_momentum_ = _x_input * walk_speed_;
 
 
 //if you can drop through a platform 
-if (_y_input == 1 && _jump){
+if (_y_input == 1 && _jump && place_meeting(x,y+global.gravity_,obj_solid_platform)){
 	state_ = player.drop;
 }else{
 	jump(_jump);
