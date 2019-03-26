@@ -1,6 +1,6 @@
-/// @description Walk State
+/// @description Float State
 
-sprite_index = spr_bigEnemy_walk;
+sprite_index = spr_bigEnemy_idle;
 
 if abs(target_.x - x) > walk_speed_{
 	x_momentum_ = x_direction_to_player_ * walk_speed_;

@@ -22,7 +22,7 @@ state_ = bigEnemy.idle;
 health_ = 2;
 
 enum bigEnemy{
-	move,
+	float,
 	idle,
 	attack
 }
