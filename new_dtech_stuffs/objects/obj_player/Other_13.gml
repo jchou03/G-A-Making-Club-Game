@@ -15,8 +15,8 @@ x_momentum_ = _x_input * walk_speed_/4;
 /*if(_jump){
 	jump(_jump);
 	state_ = player.move;
-}*/ if(place_meeting(x,y,obj_ladder) && !_jump){
-	y_momentum_ = _y_input * climb_speed_;
+}*/ if(place_meeting(x,y,obj_ladder)){
+	y_momentum_ = _y_input * climb_speed_ * 2;
 }else{
 	state_ = player.move;
 }
