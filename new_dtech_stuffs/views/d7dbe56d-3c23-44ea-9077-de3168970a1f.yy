@@ -8,7 +8,8 @@
         "f7fb6a5f-66b6-46da-bffb-1875d4830f86",
         "dc19b119-a21f-4008-b724-0642ac68baa3",
         "fc5a6bfd-4cf9-4e3b-83e0-e048439bd48b",
-        "3c244aa0-a47d-4a98-8b45-c3cbe46cee80"
+        "3c244aa0-a47d-4a98-8b45-c3cbe46cee80",
+        "6844d5c6-83c9-42af-be3a-bd2a4fc47e52"
     ],
     "filterType": "GMScript",
     "folderName": "Movement Scripts",
