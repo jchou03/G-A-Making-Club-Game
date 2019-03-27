@@ -311,6 +311,14 @@
             }
         },
         {
+            "Key": "7aeefa7c-3838-45e0-bae9-4ce334cb5f95",
+            "Value": {
+                "id": "461be8c3-a5d4-493a-ac08-d24fc302d9d7",
+                "resourcePath": "sprites\\spr_bigEnemy_float\\spr_bigEnemy_float.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7cc09660-f6d0-403f-b511-d04ffaf4f8ce",
             "Value": {
                 "id": "5adabedd-67a5-4b38-8181-f67f5075c720",

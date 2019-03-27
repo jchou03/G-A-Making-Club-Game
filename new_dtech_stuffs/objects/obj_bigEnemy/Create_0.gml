@@ -2,10 +2,10 @@ event_inherited();
 
 attack_wait_ = global.one_second * random_range(2,4);
 idle_wait_ = global.one_second * ceil(random(3));
-walk_duration_ = global.one_second * random_range(4,15);
+float_duration_ = global.one_second * random_range(4,15);
 alarm[0] = attack_wait_;
 alarm[1] = idle_wait_;
-alarm[2] = walk_duration_;
+alarm[2] = float_duration_;
 image_xscale = -1;
 image_speed = 0.5;
 
