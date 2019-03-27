@@ -16,7 +16,6 @@ var _x_input = obj_input.right_ - obj_input.left_;
 var _y_input = obj_input.down_ - obj_input.up_;
 var _jump = obj_input.action_one_;
 var _attack = obj_input.action_two_pressed_;
-var _move = keyboard_check_pressed(ord("K"));
 
 global.player_input_direction = point_direction(0,0,_x_input,_y_input);
 
@@ -50,7 +49,7 @@ if(_attack && attack_cooldown_ <=0){
 attack_cooldown_ -= 1;
 
 //Climb state
-if(place_meeting(x,y,obj_ladder)){
+if(place_meeting(x,y,obj_ladder) && _y_input != 0){
 	state_ = player.climb;
 }
 
