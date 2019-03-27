@@ -1,4 +1,4 @@
-///@arg momentum
+///@arg x_momentum
 /*
 var _direction = argument0;
 var _acceleration = argument1;
