@@ -1,7 +1,4 @@
-/// @description 
-
-//Allow others to access instance variables
-global.playerID = id;
+event_inherited();
 
 //walking variables
 walk_speed_ = 7.5;
@@ -18,10 +15,10 @@ jump_acceleration_ = 15;
 //Other important stuff
 timer_ = 30;
 original_x_momentum_ = 0;
+state_ = player.move;
 
-//Slignshot variables
-state_ = 0;
-
+//Climbing variables
+climb_speed_ = 5;
 
 //Attacking variables
 attack_cooldown_ = 0;
@@ -29,8 +26,8 @@ attack_cooldown_ = 0;
 enum player{
 	move,
 	slingshot,
-	fly,
-	hit
+	drop,
+	climb
 }
 
 enum dir_player{

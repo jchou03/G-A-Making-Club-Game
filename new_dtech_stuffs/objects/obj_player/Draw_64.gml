@@ -1,8 +1,5 @@
 /// @description Show me dem variables
 
-draw_text(10,10,x_momentum_);
-draw_text(10,30,direction_facing_);
-draw_text(10,50,jump_acceleration_);
-
-draw_text(10,90,y);
-draw_text(10,110,y_momentum_);
+draw_text(0,0,jump_acceleration_);
+if(jump_acceleration_ != 0) draw_text(0,100,"banana");
+draw_text(0,200,state_);

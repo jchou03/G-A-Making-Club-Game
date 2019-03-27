@@ -1,6 +1,5 @@
 /// @description Move State
 
-
 image_speed = 0;
 //Controller input
 
@@ -17,7 +16,6 @@ var _x_input = obj_input.right_ - obj_input.left_;
 var _y_input = obj_input.down_ - obj_input.up_;
 var _jump = obj_input.action_one_;
 var _attack = obj_input.action_two_pressed_;
-var _move = keyboard_check_pressed(ord("K"));
 
 global.player_input_direction = point_direction(0,0,_x_input,_y_input);
 
@@ -34,51 +32,14 @@ direction_moving_ = sign(x_momentum_);
 //Set movement stuff
 y_momentum_ += global.gravity_;
 x_momentum_ = _x_input * walk_speed_;
-//in air movement
-/*
-else if(!place_meeting(x,y+1,obj_wall)){
-	//Allow exeleration up until hits maxspeed
-	if(abs(x_momentum_) < maxSpeed_){
-		x_momentum_ += _x_input * walk_speed_/20;
-	}
-	//Allow exceleration in the opposite direction
-	else if(_x_input != direction_moving_){
-		x_momentum_ += _x_input * walk_speed_/20;
-	}
-	instance_create_layer(x,y,"Instances",obj_paint);
-	/*
-	if((x_momentum_ > 0 && original_x_momentum_ < 0) || (x_momentum_ < 0 && original_x_momentum_ > 0)){
-		state_ = player.move;
-	}
-}
-*/
 
 
-
-//Jump
-//If touching the ground then give cTime and reset the jump acceleration
-if(place_meeting(x,y+2*global.gravity_,obj_wall)) {
-	cTime_ = 100;
-	jump_acceleration_ = 0;
-	air_time_ = 0;
+//if you can drop through a platform 
+if (_y_input == 1 && _jump && place_meeting(x,y+global.gravity_,obj_solid_platform)){
+	state_ = player.drop;
+}else{
+	jump(_jump);
 }
-
-//Reduce the ctime timers when in the air after not touching the ground
-if(!place_meeting(x,y+2*global.gravity_,obj_wall)) {
-	cTime_ = cTime_- 1;
-}
-if(_jump){
-	jump_acceleration_ = 11.5;
-}
-if(place_meeting(x,y+2*global.gravity_,obj_wall)&&(_jump)&&(cTime_ >= 0)){
-	y_momentum_ = -jump_acceleration_;
-	//state_ = player.fly;
-}
-//Reduce the jump height if the jump button isn't held
-if(!place_meeting(x,y+2*global.gravity_,obj_wall) && !_jump && sign(y_momentum_) < 0){
-	y_momentum_ = y_momentum_/1.2;
-}
-
 //Attack
 if(_attack && attack_cooldown_ <=0){
 	global.spearID.state_ = spear.attack;
@@ -87,8 +48,12 @@ if(_attack && attack_cooldown_ <=0){
 }
 attack_cooldown_ -= 1;
 
+//Climb state
+if(place_meeting(x,y,obj_ladder) && _y_input != 0){
+	state_ = player.climb;
+}
 
-
+/*
 //transition into grapple or whatever happens
 if(_move && distance_to_object(obj_hookPoint) < 500){
 	timer_ = 30;
@@ -105,10 +70,5 @@ if(_move && distance_to_object(obj_hookPoint) < 500){
 	state_ = player.slingshot;
 	
 }
-
-//Collisions
-x_collision(x_momentum_);
-y_collision(y_momentum_);
-
-x += x_momentum_;
-y += y_momentum_;
+*/
+apply_momentum();

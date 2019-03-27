@@ -1,4 +1,4 @@
-///@arg momentum
+///@arg x_momentum
 /*
 var _direction = argument0;
 var _acceleration = argument1;
@@ -19,7 +19,8 @@ speed_ = min(speed_, _max_speed);
 */
 var _x_momentum = argument0;
 
-if(place_meeting(x+_x_momentum,y,obj_wall)){
+if(place_meeting(x+_x_momentum,y,obj_nonsolid_platform)){
+}else if(place_meeting(x+_x_momentum,y,obj_wall)){
 	while(!place_meeting(x+sign(_x_momentum),y,obj_wall)) x += sign(_x_momentum);
 	x_momentum_ = 0;
 }
