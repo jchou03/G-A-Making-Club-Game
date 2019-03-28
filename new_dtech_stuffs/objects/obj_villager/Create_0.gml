@@ -18,3 +18,7 @@ enum villager{
 	walk,
 	talk
 }
+
+paused_ = false;
+paused_sprite_ = false;
+paused_sprite_scale_ = display_get_gui_width()/view_wport[0];

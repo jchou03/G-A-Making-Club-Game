@@ -9,3 +9,5 @@ interact_ = keyboard_check_pressed(ord("E"));
 
 action_one_ = keyboard_check(vk_space);
 action_two_pressed_ = keyboard_check_pressed(ord("J"))
+
+pause_pressed_ = keyboard_check_pressed(vk_enter);
