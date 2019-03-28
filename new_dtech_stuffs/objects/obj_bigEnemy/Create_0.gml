@@ -25,4 +25,4 @@ enum bigEnemy{
 	float,
 	idle,
 	attack
-}
+};
