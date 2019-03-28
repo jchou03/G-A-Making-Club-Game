@@ -10,7 +10,7 @@ if abs(target_.x - x) > walk_speed_{
 }
 
 if(x_momentum_ != 0){
-	image_xscale = -1*sign(x_momentum_);
+	image_xscale = 1*sign(x_momentum_);
 }
 
 //if close enough to attack go into idle then if you are that close in idle then you attack

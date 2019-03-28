@@ -9,7 +9,7 @@ image_speed = 0.5;
 
 //create_hitbox(spr_bigEnemy_hitbox,x,y,0,0,_target_array,1,1);
 
-if image_index == 4{
+if image_index == 12{
 	state_ = bigEnemy.idle;
 	alarm[0] = attack_wait_;
 }

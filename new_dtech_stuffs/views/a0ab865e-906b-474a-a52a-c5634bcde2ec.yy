@@ -5,8 +5,8 @@
     "name": "a0ab865e-906b-474a-a52a-c5634bcde2ec",
     "children": [
         "61ce972a-1451-4610-adc8-b556cb49adec",
-        "71f9cea6-770a-4dea-8fc5-b5407b0a0d62",
-        "7aeefa7c-3838-45e0-bae9-4ce334cb5f95"
+        "7aeefa7c-3838-45e0-bae9-4ce334cb5f95",
+        "71f9cea6-770a-4dea-8fc5-b5407b0a0d62"
     ],
     "filterType": "GMSprite",
     "folderName": "bigEnemy sprites",
