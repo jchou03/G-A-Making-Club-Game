@@ -1,4 +1,6 @@
 /// @description Talk state
 
-var _textbox = instance_create_layer(x,y,"Text",oTextBox);
-_textbox.text_[0] = "hi";
+if(textbox_ == noone){
+	textbox_ = instance_create_layer(camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0]),"Text",oTextBox);
+	textbox_.text_[0] = "hi";
+}
